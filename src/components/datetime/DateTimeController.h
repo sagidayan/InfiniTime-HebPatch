@@ -120,7 +120,9 @@ namespace Pinetime {
       }
 
       const char* MonthShortToString() const;
+      const char* MonthShortToHebString() const;
       const char* DayOfWeekShortToString() const;
+      const char* DayOfWeekShortToHebString() const;
       static const char* MonthShortToStringLow(Months month);
       static const char* DayOfWeekShortToStringLow(Days day);
 
