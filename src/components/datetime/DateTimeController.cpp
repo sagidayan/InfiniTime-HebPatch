@@ -8,8 +8,11 @@ using namespace Pinetime::Controllers;
 
 namespace {
   constexpr const char* const DaysStringShort[] = {"--", "MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"};
+  constexpr const char* const DaysStringShortHeb[] = {"--", "שני", "שלישי", "רביעי", "חמישי", "שישי", "שבת", "ראשון"};
   constexpr const char* const DaysStringShortLow[] = {"--", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"};
   constexpr const char* const MonthsString[] = {"--", "JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"};
+  constexpr const char* const MonthsStringHeb[] =
+    {"--", "יאנ'", "פבר'", "מרץ", "אפר'", "מאי", "יוני", "יולי", "אוג'", "ספט'", "אוק'", "נוב'", "דצמ'"};
   constexpr const char* const MonthsStringLow[] =
     {"--", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
 
@@ -140,8 +143,16 @@ const char* DateTime::MonthShortToString() const {
   return MonthsString[static_cast<uint8_t>(Month())];
 }
 
+const char* DateTime::MonthShortToHebString() const {
+  return MonthsStringHeb[static_cast<uint8_t>(Month())];
+}
+
 const char* DateTime::DayOfWeekShortToString() const {
   return DaysStringShort[static_cast<uint8_t>(DayOfWeek())];
+}
+
+const char* DateTime::DayOfWeekShortToHebString() const {
+  return DaysStringShortHeb[static_cast<uint8_t>(DayOfWeek())];
 }
 
 const char* DateTime::MonthShortToStringLow(Months month) {
